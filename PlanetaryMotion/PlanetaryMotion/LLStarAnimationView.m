@@ -109,8 +109,10 @@
     _centerItem.bounds= CGRectMake(0, 0, _starWidth, _starWidth+20);
     _centerItem.center = _centerPoint;
     [_centerItem.headerImageView addcornerRadius:_starWidth/2.0];
+    _centerItem.headerImageView.image = [UIImage imageNamed:@"sun"];
     _centerItem.nameLabel.text = [LLAnimationItem itemNames][_centerItem.itemType];
     [self addSubview:_centerItem];
+    NSArray *images = @[@"star1",@"star2",@"star3"];
    //添加三角形三个顶点Item
     for (int i = 0; i<self.aLinepoints.count; i++) {
         LLAnimationItem *item =[[[NSBundle mainBundle] loadNibNamed:@"LLAnimationItem" owner:self options:nil] firstObject];
@@ -118,6 +120,7 @@
         item.bounds= CGRectMake(0, 0, _starWidth, _starWidth+20);
         item.center = self.aLinepoints[i].CGPointValue;
         [item.headerImageView addcornerRadius:_starWidth/2.0];
+        item.headerImageView.image = [UIImage imageNamed:images[i]];
         item.nameLabel.text = [LLAnimationItem itemNames][i];
         [self addSubview:item];
         [self.items addObject:item];
