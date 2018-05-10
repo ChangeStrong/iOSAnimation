@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PlanetaryMotion/PlanetaryMotion.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MaskAnimation/MaskAnimation.xcodeproj">
    </FileRef>
 </Workspace>
