@@ -14,6 +14,7 @@
 		69C15B8720A4145B009D8650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C15B8520A4145B009D8650 /* LaunchScreen.storyboard */; };
 		69C15B8A20A4145B009D8650 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C15B8920A4145B009D8650 /* main.m */; };
 		69C15B9920A415F0009D8650 /* UIView+LLMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C15B9820A415F0009D8650 /* UIView+LLMask.m */; };
+		69C15B9B20A42179009D8650 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 69C15B9A20A42179009D8650 /* timg.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		69C15B8920A4145B009D8650 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69C15B9720A415F0009D8650 /* UIView+LLMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LLMask.h"; sourceTree = "<group>"; };
 		69C15B9820A415F0009D8650 /* UIView+LLMask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LLMask.m"; sourceTree = "<group>"; };
+		69C15B9A20A42179009D8650 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		69C15B7920A4145B009D8650 /* MaskAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				69C15B9A20A42179009D8650 /* timg.jpeg */,
 				69C15B9020A414A9009D8650 /* View */,
 				69C15B7A20A4145B009D8650 /* AppDelegate.h */,
 				69C15B7B20A4145B009D8650 /* AppDelegate.m */,
@@ -144,6 +147,7 @@
 			files = (
 				69C15B8720A4145B009D8650 /* LaunchScreen.storyboard in Resources */,
 				69C15B8420A4145B009D8650 /* Assets.xcassets in Resources */,
+				69C15B9B20A42179009D8650 /* timg.jpeg in Resources */,
 				69C15B8220A4145B009D8650 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

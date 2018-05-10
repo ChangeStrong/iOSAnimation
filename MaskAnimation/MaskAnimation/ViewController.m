@@ -23,10 +23,11 @@
 
 -(void)createView
 {
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100,100, 200, 300)];
+    UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(100,100, 200, 300)];
+    view.image = [UIImage imageNamed:@"timg.jpeg"];
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
-    [view addMaskPath:[view getBottomTrangelPath] isReverse:NO];
+    [view addMaskPath:[view getBottomTrangelPathDegree:15] isReverse:NO];
     
 }
 

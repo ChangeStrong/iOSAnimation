@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (LLMask)
-//路径选择
--(UIBezierPath *)getBottomTrangelPath;
+//路径选择 degree 三角形底部角度 30度
+-(UIBezierPath *)getBottomTrangelPathDegree:(CGFloat)degree;
 
 //开始遮罩
 -(void)addMaskPath:(UIBezierPath *)path isReverse:(BOOL)isReverse;

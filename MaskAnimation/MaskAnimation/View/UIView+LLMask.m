@@ -11,11 +11,11 @@
 
 @implementation UIView (LLMask)
 
--(UIBezierPath *)getBottomTrangelPath
+-(UIBezierPath *)getBottomTrangelPathDegree:(CGFloat)degree
 {
     CGPoint bPoint= CGPointMake(0, [self height]);
     CGPoint cPoint = CGPointMake([self width], [self height]);
-    CGPoint ePoint = CGPointMake([self width], ([self height]-(tan(DEGREES_TO_RADIANS(30))*[self width])));
+    CGPoint ePoint = CGPointMake([self width], ([self height]-(tan(DEGREES_TO_RADIANS(degree))*[self width])));
      UIBezierPath *path0 = [UIBezierPath bezierPathWithRect:self.bounds];
     
     
@@ -32,7 +32,7 @@
     return path;
 }
 
--(void)addMaskPath:(UIBezierPath *)path isReverse:(BOOL)isReverse
+-(void)addMaskPath:(UIBezierPath *)path  isReverse:(BOOL)isReverse
 {
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.backgroundColor = [UIColor purpleColor].CGColor;
