@@ -1,4 +1,3 @@
-# iOSAnimation
 # 行星(星球)运动
 ![image](https://github.com/ChangeStrong/iOSAnimation/blob/master/star2.gif)
 
