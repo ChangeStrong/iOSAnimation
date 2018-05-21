@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PieChart/PieChart.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Barrage/Barrage.xcodeproj">
    </FileRef>
    <FileRef
