@@ -24,12 +24,22 @@
     // Drawing code
 }
 */
--(instancetype)initWithFrame:(CGRect)frame
+-(NSMutableArray <CurveModel *>*)models
+{
+    if (!_models) {
+        _models = [NSMutableArray new];
+    }
+    return _models;
+}
+
+-(instancetype)initWithFrame:(CGRect)frame models:(NSMutableArray <CurveModel *>*)models
 {
     if (self = [super initWithFrame:frame]) {
-         _radius = [self height]/2.0;
+         _radius = [self height]/2.0-(30*cos(DEGREES_TO_RADIANS(45))*2.0);//减去外部内部需要的尺寸
          _centerPoint = CGPointMake([self width]/2.0, [self height]/2.0);
 //        self.bounds = CGRectMake(_centerPoint.x, _centerPoint.y, frame.size.width, frame.size.height);
+        [self.models setArray:models];
+        self.clipsToBounds = YES;
         [self createPieChartView];
     }
     return self;
@@ -46,20 +56,7 @@
 
 -(void)createPieChartView
 {
-    NSMutableArray <CurveModel *>*array = [NSMutableArray array];
-    
-    for (int i=0; i<10; i++) {
-        CurveModel *cuveModel = [[CurveModel alloc]init];
-        cuveModel.startAngel = i*360/10;
-        cuveModel.endAngel = i*360/10+ 360/10.0;
-        int red = arc4random()%255;
-        int green = arc4random()%255;
-        int blue = arc4random()%255;
-        cuveModel.color = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-        [array addObject:cuveModel];
-    }
-    
-    [array enumerateObjectsUsingBlock:^(CurveModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.models enumerateObjectsUsingBlock:^(CurveModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIBezierPath *path = [self bezierPathStartAngle:obj.startAngel endAngle:obj.endAngel];
         CAShapeLayer *maskLayer = [CAShapeLayer layer];
         //        maskLayer.backgroundColor = [UIColor purpleColor].CGColor;
@@ -71,6 +68,10 @@
          CGFloat angle = obj.endAngel-(obj.endAngel-obj.startAngel)/2.0;//扇形边缘中心位置的角度
         //扇形边缘的中心点
 //        CGPoint aPoint = CGPointMake(_centerPoint.x+ _radius*cos(DEGREES_TO_RADIANS(angle)),_centerPoint.y+ _radius*sin(DEGREES_TO_RADIANS(angle)));
+        //外面边缘的半径
+        CGFloat outRadius = [self height]/2.0+100;//100是随意
+        CGPoint outCenterPoint = CGPointMake(_centerPoint.x+ outRadius*cos(DEGREES_TO_RADIANS(angle)), _centerPoint.y+outRadius*sin(DEGREES_TO_RADIANS(angle)));
+        
         
         int width = 30;
         //内部边缘文字
@@ -80,10 +81,13 @@
         CGFloat newRadius0 = (_radius-((width/2.0)/cos(DEGREES_TO_RADIANS(45))));//扇形的半径+label的对角线长度
         //新半径扇形的边缘中心点
         CGPoint bPoint0 = CGPointMake(_centerPoint.x+ newRadius0*cos(DEGREES_TO_RADIANS(angle)), _centerPoint.y+newRadius0*sin(DEGREES_TO_RADIANS(angle)));
-        label0.center = bPoint0;
+        obj.innerLabelCenterPoint = bPoint0;
+        obj.innerLabe = label0;
+        label0.center = outCenterPoint;
         label0.text = @"6";
         label0.textAlignment = NSTextAlignmentCenter;
         [self addSubview:label0];
+        
         
         //外围边缘文字
         UILabel *label = [[UILabel alloc]init];
@@ -94,11 +98,31 @@
         CGFloat newRadius = (_radius+((width/2.0)/cos(DEGREES_TO_RADIANS(45))));//扇形的半径+label的对角线长度
         //新半径扇形的边缘中心点
         CGPoint bPoint = CGPointMake(_centerPoint.x+ newRadius*cos(DEGREES_TO_RADIANS(angle)), _centerPoint.y+newRadius*sin(DEGREES_TO_RADIANS(angle)));
-        label.center = bPoint; //CGPointMake( aPoint.x+width/2.0, aPoint.y+((width/2.0)*tan(DEGREES_TO_RADIANS(angle))));
+        obj.outLabelCenterPoint = bPoint;
+        obj.outLabel=label;
+        label.center = outCenterPoint; //CGPointMake( aPoint.x+width/2.0, aPoint.y+((width/2.0)*tan(DEGREES_TO_RADIANS(angle))));
         [self addSubview:label];
+        
     }];
     
 }
+
+-(void)startAnimation
+{
+    [self.models enumerateObjectsUsingBlock:^(CurveModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self startLabelAnimation:obj];
+    }];
+}
+
+-(void)startLabelAnimation:(CurveModel *)model
+{
+    [UIView animateWithDuration:2.0 animations:^{
+        model.innerLabe.center = model.innerLabelCenterPoint;
+        model.outLabel.center = model.outLabelCenterPoint;
+    }];
+    
+}
+
 -(CGFloat)x
 {
     return self.frame.origin.x;

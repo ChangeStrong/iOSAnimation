@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurveModel.h"
 
 @interface PieChartView : UIView
-
+@property(nonatomic, strong)  NSMutableArray <CurveModel *>*models;
+-(instancetype)initWithFrame:(CGRect)frame models:(NSMutableArray <CurveModel *>*)models;
+-(void)startAnimation;
 @end

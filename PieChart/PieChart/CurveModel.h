@@ -14,4 +14,9 @@
 @property(nonatomic,assign) int startAngel;
 @property(nonatomic,assign) int endAngel;
 @property(nonatomic, strong) UIColor *color;
+@property(nonatomic, weak) UILabel *innerLabe;
+@property(nonatomic,weak) UILabel *outLabel;
+@property(nonatomic, assign) CGPoint innerLabelCenterPoint;
+@property(nonatomic, assign) CGPoint outLabelCenterPoint;
+
 @end
