@@ -15,6 +15,7 @@
 		6943824720B2ABF600B6F914 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943824620B2ABF600B6F914 /* main.m */; };
 		6943824F20B2AC2B00B6F914 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943824E20B2AC2B00B6F914 /* PieChartView.m */; };
 		6943825520B2B53000B6F914 /* CurveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943825420B2B53000B6F914 /* CurveModel.m */; };
+		69B4A66320C0F4AD007D3E92 /* CommonUse.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B4A66220C0F4AD007D3E92 /* CommonUse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		6943824E20B2AC2B00B6F914 /* PieChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
 		6943825320B2B53000B6F914 /* CurveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurveModel.h; sourceTree = "<group>"; };
 		6943825420B2B53000B6F914 /* CurveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurveModel.m; sourceTree = "<group>"; };
+		69B4A66120C0F4AD007D3E92 /* CommonUse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUse.h; sourceTree = "<group>"; };
+		69B4A66220C0F4AD007D3E92 /* CommonUse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				6943824620B2ABF600B6F914 /* main.m */,
 				6943825320B2B53000B6F914 /* CurveModel.h */,
 				6943825420B2B53000B6F914 /* CurveModel.m */,
+				69B4A66120C0F4AD007D3E92 /* CommonUse.h */,
+				69B4A66220C0F4AD007D3E92 /* CommonUse.m */,
 			);
 			path = PieChart;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B4A66320C0F4AD007D3E92 /* CommonUse.m in Sources */,
 				6943824F20B2AC2B00B6F914 /* PieChartView.m in Sources */,
 				6943825520B2B53000B6F914 /* CurveModel.m in Sources */,
 				6943823C20B2ABF600B6F914 /* ViewController.m in Sources */,

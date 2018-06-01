@@ -13,20 +13,12 @@
 @end
 
 @implementation ViewController{
+    PieChartView *_view;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-   
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-//    [self startAction:nil];
-}
-- (IBAction)startAction:(UIButton *)sender {
     NSMutableArray <CurveModel *>*array = [NSMutableArray array];
     
     for (int i=0; i<10; i++) {
@@ -41,9 +33,20 @@
     }
     
     PieChartView *view = [[PieChartView alloc]initWithFrame:CGRectMake(100, 100, 250, 250) models:array];
-//    view.backgroundColor = [UIColor redColor];
+    //    view.backgroundColor = [UIColor redColor];
+    _view = view;
     [self.view addSubview:view];
-    [view startAnimation];
+   
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    [self startAction:nil];
+}
+- (IBAction)startAction:(UIButton *)sender {
+    
+    [_view startAnimation];
 }
 
 

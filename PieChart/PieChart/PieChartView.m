@@ -8,8 +8,9 @@
 
 #import "PieChartView.h"
 #import "CurveModel.h"
+#import "CommonUse.h"
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
-@interface PieChartView()
+@interface PieChartView()<CAAnimationDelegate>
 
 @end
 
@@ -58,12 +59,13 @@
 {
     [self.models enumerateObjectsUsingBlock:^(CurveModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIBezierPath *path = [self bezierPathStartAngle:obj.startAngel endAngle:obj.endAngel];
-        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        CAShapeLayer *trangleLayer = [CAShapeLayer layer];
         //        maskLayer.backgroundColor = [UIColor purpleColor].CGColor;
-        maskLayer.path = [path CGPath];
-        maskLayer.fillColor = obj.color.CGColor;
-        maskLayer.fillRule = kCAFillRuleNonZero;//kCAFillRuleEvenOdd画的区域 取反  解释为奇偶。
-        [self.layer addSublayer:maskLayer];
+        trangleLayer.path = [path CGPath];
+        trangleLayer.fillColor = obj.color.CGColor;
+        trangleLayer.fillRule = kCAFillRuleNonZero;//kCAFillRuleEvenOdd画的区域 取反  解释为奇偶。
+        [self.layer addSublayer:trangleLayer];
+        obj.trangleLayer = trangleLayer;
         
          CGFloat angle = obj.endAngel-(obj.endAngel-obj.startAngel)/2.0;//扇形边缘中心位置的角度
         //扇形边缘的中心点
@@ -71,7 +73,7 @@
         //外面边缘的半径
         CGFloat outRadius = [self height]/2.0+100;//100是随意
         CGPoint outCenterPoint = CGPointMake(_centerPoint.x+ outRadius*cos(DEGREES_TO_RADIANS(angle)), _centerPoint.y+outRadius*sin(DEGREES_TO_RADIANS(angle)));
-        
+        obj.outCenterPoint = outCenterPoint;
         
         int width = 30;
         //内部边缘文字
@@ -109,18 +111,45 @@
 
 -(void)startAnimation
 {
+    //翻转 oglFlip
+   [CommonUse addAnimationLayer:self.layer type:@"oglFlip"];
+    
     [self.models enumerateObjectsUsingBlock:^(CurveModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self startLabelAnimation:obj];
     }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self stopAnimation];
+    });
+}
+
+-(void)stopAnimation
+{
+    [self.layer removeAllAnimations];
 }
 
 -(void)startLabelAnimation:(CurveModel *)model
 {
+    model.innerLabe.center = model.outCenterPoint;
+    model.outLabel.center = model.outCenterPoint;
     [UIView animateWithDuration:2.0 animations:^{
         model.innerLabe.center = model.innerLabelCenterPoint;
         model.outLabel.center = model.outLabelCenterPoint;
     }];
     
+}
+
+
+
+#pragma mark CAAnimationDelegate
+
+- (void)animationDidStart:(CAAnimation *)anim
+{
+    NSLog(@"animationDidStart");
+}
+
+-(void) animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    NSLog(@"animationDidStop");
 }
 
 -(CGFloat)x
