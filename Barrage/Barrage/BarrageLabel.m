@@ -76,7 +76,12 @@
     NSArray <NSValue *>*array = @[[NSValue valueWithCGPoint:_startPoint],[NSValue valueWithCGPoint:_endPoint]];
     
     UIBezierPath *path = [self creatPathPoints:array];
+    //创建动画
     CAAnimation *animation = [self creatAnimationPath:path];
+    if (line == 1) {
+//        animation = [self creatAnimationGroup:path];
+        [self createWaveAnimationGroup];
+    }
     //开始动画
     [self.layer addAnimation:animation forKey:@"LLAnimationPosition"];
    //利用系统时钟监听layer属性变化
@@ -84,15 +89,15 @@
      self.displayLink.paused = YES;
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     
-    
-    
-    
 }
 
 //停止动画
 -(void)stopAnimation
 {
-   
+    [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeAllAnimations];
+        [obj removeFromSuperlayer];
+    }];
     [self.layer removeAllAnimations];
     //停止系统定时器
     if (self.displayLink) {
@@ -202,6 +207,69 @@
     //    [animation setRemovedOnCompletion:NO];
     return animation;
 }
+
+-(CAAnimationGroup *)creatAnimationGroup:(UIBezierPath *)path
+{
+    CAAnimationGroup *grouup = [CAAnimationGroup animation];
+    //缩放
+    CABasicAnimation *basic = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    [basic setFromValue:@(1.0)];
+    [basic setToValue:@(1.5)];
+    //路径动画
+    CAKeyframeAnimation *pathAnimation = [self creatAnimationPath:path];
+    
+    grouup.repeatCount = 0;
+    grouup.duration = 8.0;
+//    grouup.fillMode =
+    [grouup setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
+    [grouup setDelegate:self];
+    
+    [grouup setAnimations:@[basic,pathAnimation]];
+    return grouup;
+}
+
+//波纹动画
+-(CAAnimationGroup *)createWaveAnimationGroup
+{
+    NSInteger pulsingCount = 5;//生成五个波纹
+    double animationDuration = 3;
+    CALayer * animationLayer = [CALayer layer];
+    
+    for (int i = 0; i < pulsingCount; i++) {
+        CALayer * pulsingLayer = [CALayer layer];
+        pulsingLayer.frame = CGRectMake(LL_mmWidth(self)-LL_mmHeight(self)-15, 0, LL_mmHeight(self), LL_mmHeight(self));
+        pulsingLayer.borderColor = [UIColor whiteColor].CGColor;
+        pulsingLayer.borderWidth = 1;
+        pulsingLayer.cornerRadius = LL_mmHeight(self) / 2;
+    
+        CAMediaTimingFunction * defaultCurve = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        
+        CAAnimationGroup * animationGroup = [CAAnimationGroup animation];
+        animationGroup.fillMode = kCAFillModeBackwards;
+//        //动画延时执行
+        animationGroup.beginTime = CACurrentMediaTime() + (double)i * animationDuration / (double)pulsingCount;
+        animationGroup.duration = animationDuration;
+        animationGroup.repeatCount = 10;
+        animationGroup.timingFunction = defaultCurve;
+        
+        CABasicAnimation * scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        scaleAnimation.fromValue = @1.0;
+        scaleAnimation.toValue = @2.2;
+        
+        CAKeyframeAnimation * opacityAnimation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
+        opacityAnimation.values = @[@1, @0.9, @0.8, @0.7, @0.6, @0.5, @0.4, @0.3, @0.2, @0.1, @0];
+        opacityAnimation.keyTimes = @[@0, @0.1, @0.2, @0.3, @0.4, @0.5, @0.6, @0.7, @0.8, @0.9, @1];
+        
+        animationGroup.animations = @[scaleAnimation, opacityAnimation];
+        [pulsingLayer addAnimation:animationGroup forKey:@"plulsing"];
+        [animationLayer addSublayer:pulsingLayer];
+    }
+    
+    [self.layer addSublayer:animationLayer];
+    return nil;
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
