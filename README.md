@@ -6,4 +6,4 @@
 # 3.图片实现遮罩效果类似于裁剪
 ![image](https://github.com/ChangeStrong/iOSAnimation/blob/master/maskAnimation.gif)
 # 4.饼状图
-![image](https://github.com/ChangeStrong/iOSAnimation/blob/master/QQ20180601-122718-HD.gifhttps://github.com/ChangeStrong/iOSAnimation/blob/master/QQ20180601-122718-HD.gif)
+![image](https://github.com/ChangeStrong/iOSAnimation/blob/master/pichart.gif)
