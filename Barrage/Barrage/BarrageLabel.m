@@ -79,9 +79,13 @@
     //创建动画
     CAAnimation *animation = [self creatAnimationPath:path];
     if (line == 1) {
-//        animation = [self creatAnimationGroup:path];
+        //添加波纹
         [self createWaveAnimationGroup];
+    }else if(line == 2){
+        //添加缩放
+        animation = [self creatAnimationGroup:path];
     }
+    
     //开始动画
     [self.layer addAnimation:animation forKey:@"LLAnimationPosition"];
    //利用系统时钟监听layer属性变化
