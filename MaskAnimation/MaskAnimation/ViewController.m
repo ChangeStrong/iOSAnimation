@@ -65,6 +65,8 @@
     animation.toValue = [NSNumber numberWithFloat:1.0];
     [shapelayer addAnimation:animation forKey:@"strokeEnd"];//对划线属性进行动画
 }
+- (IBAction)changeAnimationAction:(UIButton *)sender {
+}
 
 
 - (void)didReceiveMemoryWarning {

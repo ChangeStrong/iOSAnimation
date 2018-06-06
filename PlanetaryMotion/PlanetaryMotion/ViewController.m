@@ -12,6 +12,7 @@
 #define kScreenHeight       ([UIScreen mainScreen].bounds.size.height - 20.0)
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property(nonatomic, strong) LLStarAnimationView *animationView;
 @end
 
@@ -32,6 +33,15 @@
     [super viewDidAppear:animated];
     [self.animationView startAnimation];
 }
+- (IBAction)changeAnimationAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        [self.animationView pauseAnimation];
+    }else{
+        [self.animationView resumeAnimation];
+    }
+}
+
 
 -(void)createStarUI
 {

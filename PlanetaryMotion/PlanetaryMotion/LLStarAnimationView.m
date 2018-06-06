@@ -10,6 +10,7 @@
 #import "LLAnimationItem.h"
 #import "LLMyHeader.h"
 #import "UIView+Helper.h"
+#import "CommonUse.h"
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 #define kSelfWeak __weak typeof(self) weakSelf = self
 
@@ -157,6 +158,30 @@
     }];
 }
 
+//暂停 layer 层的动画
+- (void)pauseAnimation
+{
+    [self.items enumerateObjectsUsingBlock:^(LLAnimationItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [CommonUse pauseLayer:obj.layer];
+    }];
+//    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+//    layer.speed = 0.0;
+//    layer.timeOffset = pausedTime;
+}
+
+//继续layer上面的动画
+- (void)resumeAnimation
+{
+    [self.items enumerateObjectsUsingBlock:^(LLAnimationItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [CommonUse resumeLayer:obj.layer];
+    }];
+//    CFTimeInterval pausedTime = [layer timeOffset];
+//    layer.speed = 1.0;
+//    layer.timeOffset = 0.0;
+//    layer.beginTime = 0.0;
+//    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+//    layer.beginTime = timeSincePause;
+}
 
 
 #pragma mark CAAnimationDelegate

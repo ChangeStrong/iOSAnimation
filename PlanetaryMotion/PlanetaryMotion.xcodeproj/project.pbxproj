@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6920BC1320C773BE002BA072 /* CommonUse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6920BC1220C773BE002BA072 /* CommonUse.m */; };
 		69C15BB420A44223009D8650 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C15BB320A44223009D8650 /* AppDelegate.m */; };
 		69C15BB720A44223009D8650 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C15BB620A44223009D8650 /* ViewController.m */; };
 		69C15BBA20A44223009D8650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C15BB820A44223009D8650 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6920BC1120C773BE002BA072 /* CommonUse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUse.h; sourceTree = "<group>"; };
+		6920BC1220C773BE002BA072 /* CommonUse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUse.m; sourceTree = "<group>"; };
 		69C15BAF20A44223009D8650 /* PlanetaryMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetaryMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C15BB220A44223009D8650 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69C15BB320A44223009D8650 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				69C15BBD20A44223009D8650 /* LaunchScreen.storyboard */,
 				69C15BC020A44223009D8650 /* Info.plist */,
 				69C15BC120A44223009D8650 /* main.m */,
+				6920BC1120C773BE002BA072 /* CommonUse.h */,
+				6920BC1220C773BE002BA072 /* CommonUse.m */,
 			);
 			path = PlanetaryMotion;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6920BC1320C773BE002BA072 /* CommonUse.m in Sources */,
 				69C15BB720A44223009D8650 /* ViewController.m in Sources */,
 				69C15BC220A44223009D8650 /* main.m in Sources */,
 				69C15BD320A44307009D8650 /* UIView+Helper.m in Sources */,
@@ -304,6 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlanetaryMotion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Change.Strong.PlanetaryMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -317,6 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlanetaryMotion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Change.Strong.PlanetaryMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";

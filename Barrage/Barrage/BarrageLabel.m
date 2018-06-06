@@ -83,7 +83,7 @@
         [self createWaveAnimationGroup];
     }else if(line == 2){
         //添加缩放
-        animation = [self creatAnimationGroup:path];
+//        animation = [self creatAnimationGroup:path];
     }
     
     //开始动画
@@ -99,8 +99,10 @@
 -(void)stopAnimation
 {
     [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj removeAllAnimations];
-        [obj removeFromSuperlayer];
+        if (obj.name && [obj.name isEqualToString:@"LLwaveLayer"]) {
+            [obj removeAllAnimations];
+            [obj removeFromSuperlayer];
+        }
     }];
     [self.layer removeAllAnimations];
     //停止系统定时器
@@ -238,13 +240,14 @@
     NSInteger pulsingCount = 5;//生成五个波纹
     double animationDuration = 3;
     CALayer * animationLayer = [CALayer layer];
+    animationLayer.name = @"LLwaveLayer";
     
     for (int i = 0; i < pulsingCount; i++) {
         CALayer * pulsingLayer = [CALayer layer];
         pulsingLayer.frame = CGRectMake(LL_mmWidth(self)-LL_mmHeight(self)-15, 0, LL_mmHeight(self), LL_mmHeight(self));
         pulsingLayer.borderColor = [UIColor whiteColor].CGColor;
         pulsingLayer.borderWidth = 1;
-        pulsingLayer.cornerRadius = LL_mmHeight(self) / 2;
+        pulsingLayer.cornerRadius = LL_mmHeight(self) / 2.0;
     
         CAMediaTimingFunction * defaultCurve = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
         

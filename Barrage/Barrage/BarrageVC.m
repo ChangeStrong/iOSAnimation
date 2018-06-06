@@ -172,7 +172,7 @@
 #pragma mark 数据
 -(void)loadData
 {
-    for (int i =0 ; i< 100; i++) {
+    for (int i =0 ; i< 10; i++) {
         NSMutableAttributedString *text = [NSMutableAttributedString new];
         
         //添加图片
