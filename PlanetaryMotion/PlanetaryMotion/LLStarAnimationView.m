@@ -112,6 +112,7 @@
     [_centerItem.headerImageView addcornerRadius:_starWidth/2.0];
     _centerItem.headerImageView.image = [UIImage imageNamed:@"sun"];
     _centerItem.nameLabel.text = [LLAnimationItem itemNames][_centerItem.itemType];
+    _centerItem.alpha = 0;
     [self addSubview:_centerItem];
     NSArray *images = @[@"star1",@"star2",@"star3"];
    //添加三角形三个顶点Item
@@ -123,6 +124,7 @@
         [item.headerImageView addcornerRadius:_starWidth/2.0];
         item.headerImageView.image = [UIImage imageNamed:images[i]];
         item.nameLabel.text = [LLAnimationItem itemNames][i];
+        item.alpha = 0;
         [self addSubview:item];
         [self.items addObject:item];
         
@@ -134,6 +136,8 @@
 //开始动画
 -(void)startAnimation
 {
+   
+   
     kSelfWeak;
 //   __block NSArray *array = @[self.aLinepoints,self.bLinepoints,self.cLinepoints];
     __block NSArray *startAngles = @[@(180+90),@(90+60),@(30)];
@@ -148,11 +152,37 @@
         [obj.layer addAnimation:animation forKey:@"LLAnimationPosition"];
     }];
     
+    [self startItemAlphaAnimation:[self.items firstObject]];
+    
+}
+
+//开启透明度动画
+-(void)startItemAlphaAnimation:(LLAnimationItem *)item
+{
+    item.alpha = 0;
+    kSelfWeak;
+    [UIView animateWithDuration:3.0 animations:^{
+        item.alpha = 1;
+    } completion:^(BOOL finished) {
+        NSUInteger indx = [weakSelf.items indexOfObject:item];
+        indx++;
+        if (indx < weakSelf.items.count) {
+            [weakSelf startItemAlphaAnimation:weakSelf.items[indx]];
+        }else{
+            //显示中间星球入场动画
+            NSArray *points = @[[NSValue valueWithCGPoint:CGPointMake(LL_mmWidth(self)/2.0,LL_mmHeight(self))],[NSValue valueWithCGPoint:_centerItem.center]];
+            UIBezierPath *ciclePath = [self creatPathPoints:points];
+            CAAnimation *animation = [weakSelf cgreateGroupAnimation:ciclePath];
+            [_centerItem.layer addAnimation:animation forKey:@"LLAnimationGroup"];
+            _centerItem.alpha = 1.0;
+        }
+    }];
 }
 
 //停止动画
 -(void)stopAnimation
 {
+    [_centerItem.layer removeAllAnimations];
     [self.items enumerateObjectsUsingBlock:^(LLAnimationItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj.layer removeAllAnimations];
     }];
@@ -230,7 +260,7 @@
     }
     
     
-    [path closePath];//闭合线
+//    [path closePath];//闭合线
     //[path stroke];//Draws line 根据坐标点将线画出来
     //[path fill];//颜色填充
     return path;
@@ -260,6 +290,45 @@
     //    [animation setRemovedOnCompletion:NO];
     return animation;
 }
+
+-(CAAnimationGroup *)cgreateGroupAnimation:(UIBezierPath *)path
+{
+     CAAnimationGroup *group = [CAAnimationGroup animation];
+    
+    //基础动画
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+    animation.keyPath = @"transform.scale";
+//    animation.fromValue = @(0.2);
+//    animation.toValue = @(1.0);
+    animation.values = @[@(0.2),@(3.0),@(1.0)];
+    animation.duration = 2.0;
+    animation.repeatCount = 0;
+    
+    CABasicAnimation *basicAni = [CABasicAnimation animation];
+    basicAni.keyPath = @"transform.rotation.z";
+    basicAni.fromValue = @(0);
+    basicAni.toValue = @(M_PI*2);
+    basicAni.duration = 2.0;
+    basicAni.repeatCount = 0;
+    
+    //添加动画
+    CAKeyframeAnimation * move;
+    move=[CAKeyframeAnimation animationWithKeyPath:@"position"];
+    move.path = path.CGPath;
+    move.duration = 2.0;
+    move.repeatCount=0;
+    
+    [group setAnimations:@[animation,basicAni,move]];
+    group.repeatCount = 0;
+    group.duration = 2.0;//子动画内的时间必须保存一致否则动画效果不流畅
+    group.fillMode = kCAFillModeForwards;//动画加入layer就开始动画状态
+    group.delegate = self;
+    group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    group.removedOnCompletion = NO;
+    
+    return group;
+}
+
 
 /*
  // Only override drawRect: if you perform custom drawing.

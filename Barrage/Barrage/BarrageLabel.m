@@ -188,7 +188,7 @@
             [path addLineToPoint:pointValues[i].CGPointValue];
         }
     }
-    
+   
     
 //    [path closePath];//闭合线
     //[path stroke];//Draws line 根据坐标点将线画出来
