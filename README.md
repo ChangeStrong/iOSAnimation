@@ -8,4 +8,4 @@
 # 4.饼状图
 ![image](https://github.com/ChangeStrong/iOSAnimation/blob/master/pichart.gif)
 # 5.摇杆(手柄)
-![image](handshank.gif)
+![image](https://github.com/ChangeStrong/iOSAnimation/blob/master/handshank.gif)
