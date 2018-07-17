@@ -39,8 +39,8 @@
             obj.startPoint = CGPointMake(x, weakSelf.frame.size.height-weakSelf.contentInsets.bottom);
             CGFloat y =weakSelf.contentInsets.top + (weakSelf.frame.size.height-(weakSelf.contentInsets.bottom+weakSelf.contentInsets.top))*obj.percent;
             obj.endPoint = CGPointMake(x, y);
-            obj.topLineStartPoint = CGPointMake(x-_BarWidth/2.0, y);
-            obj.topLineEndPoint = CGPointMake(x+_BarWidth/2.0, y);
+            obj.topLineStartPoint = CGPointMake(x-_BarWidth/2.0, y-2.5);
+            obj.topLineEndPoint = CGPointMake(x+_BarWidth/2.0, y-2.5);
         }];
         
         [self createUI];
@@ -73,7 +73,7 @@
         //画顶部线
         UIBezierPath *topPath = [self bezierPathStartAngle:obj.topLineStartPoint endAngle:obj.topLineEndPoint];
         CAShapeLayer *topLayer = [CAShapeLayer layer];
-        topLayer.lineWidth = 2;
+        topLayer.lineWidth = 5;
         topLayer.path = [topPath CGPath];
         topLayer.strokeColor = obj.topLineColor.CGColor;
         topLayer.fillRule = kCAFillRuleNonZero;//kCAFillRuleEvenOdd画的区域 取反  解释为奇偶。
