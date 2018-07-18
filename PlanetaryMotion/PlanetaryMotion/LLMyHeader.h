@@ -21,7 +21,7 @@
 
 /*---------------------------  适配屏幕☟  ---------------------------*/
 #define ORIGINAL_WIDTH 320.0      //当前原型图基准iOS设备的逻辑分辨率的宽
-#define ORIGINAL_HEIGHT 568.0     //当前原型图基准iOS设备的逻辑分辨率的高
+#define ORIGINAL_HEIGHT 667.0     //当前原型图基准iOS设备的逻辑分辨率的高
 
 ///水平方向适配系数
 #define FIT_WIDTH (([UIScreen mainScreen].bounds.size.width > [UIScreen mainScreen].bounds.size.height ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width)/ORIGINAL_WIDTH)

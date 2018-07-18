@@ -25,14 +25,28 @@
                                     <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kYM-CK-c2T"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="现场教学" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qi0-ox-3IU">
+                                <rect key="frame" x="87.5" y="48" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6KP-fq-jug"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qi0-ox-3IU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="KAh-Ya-k9A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9hx-Dh-3Yk" secondAttribute="bottom" constant="26" id="e5d-wb-Erc"/>
+                            <constraint firstItem="Qi0-ox-3IU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eRl-UU-Gek"/>
                             <constraint firstItem="9hx-Dh-3Yk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="mtL-JB-iQe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Qi0-ox-3IU" id="I4a-Yy-17F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

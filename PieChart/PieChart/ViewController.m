@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 #import "PieChartView.h"
+#import "CommonUse.h"
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -19,8 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSMutableArray <CurveModel *>*array = [NSMutableArray array];
     
+    [CommonUse addGradientView:self.titleLabel];
+    
+    NSMutableArray <CurveModel *>*array = [NSMutableArray array];
     for (int i=0; i<10; i++) {
         CurveModel *cuveModel = [[CurveModel alloc]init];
         cuveModel.startAngel = i*360/10;
@@ -32,7 +36,7 @@
         [array addObject:cuveModel];
     }
     
-    PieChartView *view = [[PieChartView alloc]initWithFrame:CGRectMake(100, 100, 250, 250) models:array];
+    PieChartView *view = [[PieChartView alloc]initWithFrame:CGRectMake(100, 200, 250, 250) models:array];
     //    view.backgroundColor = [UIColor redColor];
     _view = view;
     [self.view addSubview:view];

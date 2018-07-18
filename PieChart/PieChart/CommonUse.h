@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 @interface CommonUse : NSObject
++(void)addGradientView:(UIView *)view;
 //添加动画
 +(void)addAnimationLayer:(CALayer *)layer type:(NSString *)type;
 @end

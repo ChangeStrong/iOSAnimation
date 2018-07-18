@@ -7,6 +7,8 @@
 //
 
 #import "BarGraphView.h"
+#import "LLMyHeader.h"
+#import "ZXUIConstant.h"
 @interface BarGraphView()
 @property(nonatomic, strong)  NSMutableArray <BarModel *>*models;
 //边界insets
@@ -14,7 +16,7 @@
 @end
 @implementation BarGraphView{
     CGFloat _BarWidth;
-//    CGFloat _intervalWidth;//间隙宽
+    CGFloat _intervalWidth;//间隙宽
 }
 
 -(NSMutableArray <BarModel *>*)models
@@ -28,16 +30,23 @@
 -(instancetype)initWithFrame:(CGRect)frame models:(NSMutableArray <BarModel *>*)models
 {
     if (self = [super initWithFrame:frame]) {
-        _contentInsets = UIEdgeInsetsMake(10, 0, 10, 0);
+        _intervalWidth = 14.0*FIT_WIDTH;
+        _contentInsets = UIEdgeInsetsMake(10, 34*FIT_WIDTH, 22.0*FIT_HEIGHT, 35*FIT_WIDTH);
         [self.models setArray:models];
-          _BarWidth = self.models.count>0?self.frame.size.width/(self.models.count*2 +1):20;
+        if (self.models.count > 0) {
+              CGFloat width = (LL_mmWidth(self)-(self.contentInsets.left+self.contentInsets.right)-_intervalWidth*(self.models.count-1))/self.models.count;
+            _BarWidth = width;
+        }else{
+            _BarWidth = 20;
+        }
+      
         //初始化赋值
         typeof(self) __weak weakSelf = self;
        //对初始化位置赋值
         [self.models enumerateObjectsUsingBlock:^(BarModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            CGFloat x = (_BarWidth+_BarWidth)*(idx+1)-_BarWidth/2.0;
+            CGFloat x = weakSelf.contentInsets.left+(_BarWidth+_intervalWidth)*idx+_BarWidth/2.0;
             obj.startPoint = CGPointMake(x, weakSelf.frame.size.height-weakSelf.contentInsets.bottom);
-            CGFloat y =weakSelf.contentInsets.top + (weakSelf.frame.size.height-(weakSelf.contentInsets.bottom+weakSelf.contentInsets.top))*obj.percent;
+            CGFloat y =weakSelf.contentInsets.top +(LL_mmHeight(weakSelf)-(weakSelf.contentInsets.bottom+weakSelf.contentInsets.top))*(1-obj.percent);//倒过来显示
             obj.endPoint = CGPointMake(x, y);
             obj.topLineStartPoint = CGPointMake(x-_BarWidth/2.0, y-2.5);
             obj.topLineEndPoint = CGPointMake(x+_BarWidth/2.0, y-2.5);
@@ -60,7 +69,25 @@
 }
 
 -(void)createUI{
+    
+    //黄线
+    UIView *yellowLine = [[UIView alloc]init];
+    yellowLine.backgroundColor = UIColorHex(0xF8E71C);
+    yellowLine.frame = CGRectMake(18*FIT_WIDTH, self.contentInsets.top-2.0*FIT_HEIGHT, LL_mmWidth(self)-(18+17)*FIT_WIDTH, 2.0*FIT_HEIGHT);
+    [self addSubview:yellowLine];
+    
     [self.models enumerateObjectsUsingBlock:^(BarModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //显示详细百分比
+        UILabel *label = [[UILabel alloc]init];
+//        label.adjustsFontSizeToFitWidth = YES;
+        label.font =  FitFontSize(8.0);
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = UIColorHex(0xF8E71C);
+        label.center = CGPointMake(obj.startPoint.x, (self.contentInsets.top-2.0*FIT_HEIGHT)/2.0);
+        label.bounds = CGRectMake(0, 0, _BarWidth+_intervalWidth, self.contentInsets.top-2.0*FIT_HEIGHT);
+        label.text = [NSString stringWithFormat:@"%d%%",(int)(obj.percent*100.0)];
+        [self addSubview:label];
+        
         //画条
         UIBezierPath *path = [self bezierPathStartAngle:obj.startPoint endAngle:obj.endPoint];
         CAShapeLayer *trangleLayer = [CAShapeLayer layer];

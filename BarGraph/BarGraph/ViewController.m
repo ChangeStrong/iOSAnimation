@@ -37,8 +37,8 @@
         [array addObject:model];
     }
     
-    BarGraphView *barGraphView = [[BarGraphView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 250) models:array];
-//    barGraphView.backgroundColor = [UIColor darkGrayColor];
+    BarGraphView *barGraphView = [[BarGraphView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 250) models:array];
+    barGraphView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview:barGraphView];
     
 }

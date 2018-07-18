@@ -9,6 +9,18 @@
 #import "CommonUse.h"
 
 @implementation CommonUse
++(void)addGradientView:(UIView *)view
+{
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor, (__bridge id)[UIColor magentaColor].CGColor, (__bridge id)[UIColor clearColor].CGColor];
+    gradientLayer.locations = @[@0.0, @0.5, @1.0];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0);
+    gradientLayer.frame =view.bounds;
+    [view.layer addSublayer:gradientLayer];
+    
+}
+
 //添加动画
 +(void)addAnimationLayer:(CALayer *)layer type:(NSString *)type
 {
