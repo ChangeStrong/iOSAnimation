@@ -15,6 +15,7 @@
 		69E4E9D220FDE2A2008CF48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E4E9D120FDE2A2008CF48F /* main.m */; };
 		69E4E9DA20FDE2C8008CF48F /* BarGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E4E9D920FDE2C8008CF48F /* BarGraphView.m */; };
 		69E4E9DD20FDE395008CF48F /* BarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E4E9DC20FDE395008CF48F /* BarModel.m */; };
+		69F6A433210AC2DD0061707D /* LLBarAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F6A432210AC2DD0061707D /* LLBarAudioView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		69E4E9D920FDE2C8008CF48F /* BarGraphView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarGraphView.m; sourceTree = "<group>"; };
 		69E4E9DB20FDE395008CF48F /* BarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarModel.h; sourceTree = "<group>"; };
 		69E4E9DC20FDE395008CF48F /* BarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarModel.m; sourceTree = "<group>"; };
+		69F6A431210AC2DD0061707D /* LLBarAudioView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBarAudioView.h; sourceTree = "<group>"; };
+		69F6A432210AC2DD0061707D /* LLBarAudioView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLBarAudioView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 		69E4E9C120FDE2A2008CF48F /* BarGraph */ = {
 			isa = PBXGroup;
 			children = (
+				69F6A434210AC2E70061707D /* View */,
 				69B5AEFA20FEE4E9000B9A66 /* ZXUIConstant.h */,
 				69B5AEF820FED004000B9A66 /* LLMyHeader.h */,
 				69E4E9DB20FDE395008CF48F /* BarModel.h */,
@@ -83,6 +87,15 @@
 				69E4E9D120FDE2A2008CF48F /* main.m */,
 			);
 			path = BarGraph;
+			sourceTree = "<group>";
+		};
+		69F6A434210AC2E70061707D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69F6A431210AC2DD0061707D /* LLBarAudioView.h */,
+				69F6A432210AC2DD0061707D /* LLBarAudioView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +174,7 @@
 				69E4E9DD20FDE395008CF48F /* BarModel.m in Sources */,
 				69E4E9C420FDE2A2008CF48F /* AppDelegate.m in Sources */,
 				69E4E9DA20FDE2C8008CF48F /* BarGraphView.m in Sources */,
+				69F6A433210AC2DD0061707D /* LLBarAudioView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

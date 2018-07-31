@@ -9,15 +9,21 @@
 #import "ViewController.h"
 #import "BarGraphView.h"
 #import "BarModel.h"
+#import "LLBarAudioView.h"
+
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    LLBarAudioView *_auidoBarView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
+    [timer fire];
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -25,8 +31,16 @@
     [self creatBarGraphUI];
 }
 
+-(void)updateUI{
+    [_auidoBarView setNeedsDisplay];
+}
+
 -(void)creatBarGraphUI
 {
+    _auidoBarView = [[LLBarAudioView alloc]initWithFrame:CGRectMake(50, 50, 200, 200) barNumer:10];
+    [self.view addSubview:_auidoBarView];
+    
+    
     NSMutableArray *array = [NSMutableArray new];
     for (int i=0; i<10; i++) {
         BarModel *model = [BarModel new];
@@ -36,8 +50,8 @@
         model.topLineColor = [UIColor yellowColor];
         [array addObject:model];
     }
-    
-    BarGraphView *barGraphView = [[BarGraphView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 250) models:array];
+
+    BarGraphView *barGraphView = [[BarGraphView alloc]initWithFrame:CGRectMake(0, 250, self.view.frame.size.width, 250) models:array];
     barGraphView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview:barGraphView];
     
