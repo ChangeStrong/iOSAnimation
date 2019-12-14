@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		69B5AEF820FED004000B9A66 /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLMyHeader.h; path = ../../PlanetaryMotion/PlanetaryMotion/LLMyHeader.h; sourceTree = "<group>"; };
+		6938DA2D212D119800889D74 /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLMyHeader.h; path = ../../../HandShank/HandShank/LLMyHeader.h; sourceTree = "<group>"; };
 		69B5AEFA20FEE4E9000B9A66 /* ZXUIConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXUIConstant.h; sourceTree = "<group>"; };
 		69E4E9BF20FDE2A2008CF48F /* BarGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E4E9C220FDE2A2008CF48F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,7 +71,6 @@
 			children = (
 				69F6A434210AC2E70061707D /* View */,
 				69B5AEFA20FEE4E9000B9A66 /* ZXUIConstant.h */,
-				69B5AEF820FED004000B9A66 /* LLMyHeader.h */,
 				69E4E9DB20FDE395008CF48F /* BarModel.h */,
 				69E4E9DC20FDE395008CF48F /* BarModel.m */,
 				69E4E9D820FDE2C8008CF48F /* BarGraphView.h */,
@@ -92,6 +91,7 @@
 		69F6A434210AC2E70061707D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6938DA2D212D119800889D74 /* LLMyHeader.h */,
 				69F6A431210AC2DD0061707D /* LLBarAudioView.h */,
 				69F6A432210AC2DD0061707D /* LLBarAudioView.m */,
 			);

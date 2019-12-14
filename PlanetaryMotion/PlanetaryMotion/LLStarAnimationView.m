@@ -266,6 +266,7 @@
     return path;
 }
 
+//环形环绕路径
 -(UIBezierPath *)drawCiclreStartAngle:(CGFloat)startAngel
 {
     UIBezierPath *ciclrePath = [UIBezierPath bezierPath];

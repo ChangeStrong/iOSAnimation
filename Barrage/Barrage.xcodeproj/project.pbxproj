@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6938DA29212D114800889D74 /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLMyHeader.h; path = ../../HandShank/HandShank/LLMyHeader.h; sourceTree = "<group>"; };
 		69F8589420A444B200645AD8 /* Barrage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barrage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F8589720A444B200645AD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69F8589820A444B200645AD8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		69F858B120A4463D00645AD8 /* BarrageLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageLabel.h; sourceTree = "<group>"; };
 		69F858B320A4464B00645AD8 /* BarrageLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageLine.h; sourceTree = "<group>"; };
 		69F858B420A4464B00645AD8 /* BarrageLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageLine.m; sourceTree = "<group>"; };
-		69F858B620A446B700645AD8 /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLMyHeader.h; path = ../../PlanetaryMotion/PlanetaryMotion/LLMyHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 		69F8589620A444B200645AD8 /* Barrage */ = {
 			isa = PBXGroup;
 			children = (
-				69F858B620A446B700645AD8 /* LLMyHeader.h */,
+				6938DA29212D114800889D74 /* LLMyHeader.h */,
 				69F858B320A4464B00645AD8 /* BarrageLine.h */,
 				69F858B420A4464B00645AD8 /* BarrageLine.m */,
 				69F858B120A4463D00645AD8 /* BarrageLabel.h */,

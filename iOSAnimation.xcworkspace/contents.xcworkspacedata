@@ -19,4 +19,7 @@
    <FileRef
       location = "group:MaskAnimation/MaskAnimation.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Bubble/Bubble.xcodeproj">
+   </FileRef>
 </Workspace>

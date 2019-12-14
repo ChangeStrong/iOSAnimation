@@ -23,6 +23,7 @@
 /* Begin PBXFileReference section */
 		6920BC1120C773BE002BA072 /* CommonUse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUse.h; sourceTree = "<group>"; };
 		6920BC1220C773BE002BA072 /* CommonUse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUse.m; sourceTree = "<group>"; };
+		6938DA2C212D118000889D74 /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLMyHeader.h; path = ../../HandShank/HandShank/LLMyHeader.h; sourceTree = "<group>"; };
 		69C15BAF20A44223009D8650 /* PlanetaryMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetaryMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C15BB220A44223009D8650 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69C15BB320A44223009D8650 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		69C15BCA20A44246009D8650 /* LLAnimationItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLAnimationItem.xib; sourceTree = "<group>"; };
 		69C15BCB20A44247009D8650 /* LLStarAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLStarAnimationView.h; sourceTree = "<group>"; };
 		69C15BCC20A44247009D8650 /* LLStarAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLStarAnimationView.m; sourceTree = "<group>"; };
-		69C15BD020A442C1009D8650 /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMyHeader.h; sourceTree = "<group>"; };
 		69C15BD120A44307009D8650 /* UIView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helper.h"; sourceTree = "<group>"; };
 		69C15BD220A44307009D8650 /* UIView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,9 +73,9 @@
 		69C15BB120A44223009D8650 /* PlanetaryMotion */ = {
 			isa = PBXGroup;
 			children = (
+				6938DA2C212D118000889D74 /* LLMyHeader.h */,
 				69C15BD120A44307009D8650 /* UIView+Helper.h */,
 				69C15BD220A44307009D8650 /* UIView+Helper.m */,
-				69C15BD020A442C1009D8650 /* LLMyHeader.h */,
 				69C15BC920A44246009D8650 /* LLAnimationItem.h */,
 				69C15BC820A44246009D8650 /* LLAnimationItem.m */,
 				69C15BCA20A44246009D8650 /* LLAnimationItem.xib */,

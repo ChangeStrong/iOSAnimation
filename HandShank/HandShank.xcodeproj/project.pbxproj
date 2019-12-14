@@ -28,7 +28,7 @@
 		04DEA2121D61D58A00CDDC9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DEA2151D61D58A00CDDC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DEA2171D61D58A00CDDC9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04DEA2201D61D83700CDDC9C /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMyHeader.h; sourceTree = "<group>"; };
+		6938DA2B212D116200889D74 /* LLMyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMyHeader.h; sourceTree = "<group>"; };
 		69C15B9C20A428FD009D8650 /* LoogPressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoogPressButton.h; sourceTree = "<group>"; };
 		69C15B9D20A428FD009D8650 /* LoogPressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoogPressButton.m; sourceTree = "<group>"; };
 		69C15B9F20A42930009D8650 /* HandShankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandShankView.h; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		04DEA2051D61D58A00CDDC9C /* HandShank */ = {
 			isa = PBXGroup;
 			children = (
-				04DEA2201D61D83700CDDC9C /* LLMyHeader.h */,
+				6938DA2B212D116200889D74 /* LLMyHeader.h */,
 				69C15B9C20A428FD009D8650 /* LoogPressButton.h */,
 				69C15B9D20A428FD009D8650 /* LoogPressButton.m */,
 				69C15B9F20A42930009D8650 /* HandShankView.h */,
