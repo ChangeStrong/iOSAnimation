@@ -14,21 +14,28 @@
 @interface ChatBubbleView()
 @property(nonatomic, assign) CGFloat radius;
 @property(nonatomic, assign) CGFloat rowHeight;
-
 @property(nonatomic, weak) CAShapeLayer *currentLayer;
+
 
 
 @end
 
 @implementation ChatBubbleView
 
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+    [super drawRect:rect];
+    UIBezierPath *path = self.rowDirection==ChatBubbleViewRowDirectionLeft? [self bezierPathRowLeft]:[self bezierPathRowRight];
+    [self.fillColor setFill];
+    [self.strokeColor setStroke];
+    
+    [path stroke];
+    [path fill];
 }
-*/
+
 
 -(instancetype)initWithFrame:(CGRect)frame rowDirection:(ChatBubbleViewRowDirection)direction
 {
@@ -36,7 +43,10 @@
         _radius = 20;
         _rowHeight = 20;
         _rowDirection = direction;
-        [self drawShape];
+        _strokeColor = [UIColor redColor];
+        _fillColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+//        [self drawShape];
     }
     return self;
 }
@@ -44,28 +54,28 @@
 -(void)setRowDirection:(CGFloat)rowDirection
 {
     _rowDirection = rowDirection;
-    [self drawShape];
+    [self updateView];
 }
 
--(void)drawShape
+-(void)setStrokeColor:(UIColor *)strokeColor
 {
-    if (self.currentLayer) {
-        [self.currentLayer removeFromSuperlayer];
-    }
-    UIBezierPath *path = self.rowDirection==ChatBubbleViewRowDirectionLeft? [self bezierPathRowLeft]:[self bezierPathRowRight];
-    CAShapeLayer *trangleLayer = [CAShapeLayer layer];
-    //        maskLayer.backgroundColor = [UIColor purpleColor].CGColor;
-    trangleLayer.path = [path CGPath];
-    trangleLayer.strokeColor = [UIColor redColor].CGColor;
-    trangleLayer.fillColor = [UIColor clearColor].CGColor;
-    trangleLayer.lineWidth = 1.0;
-    trangleLayer.lineCap = kCALineCapRound;
-    trangleLayer.lineJoin = kCALineJoinRound;
-//    trangleLayer.fillColor = obj.color.CGColor;
-//    trangleLayer.fillRule = kCAFillRuleNonZero;//kCAFillRuleEvenOdd画的区域 取反  解释为奇偶。
-    [self.layer addSublayer:trangleLayer];
-    self.currentLayer = trangleLayer;
+    _strokeColor = strokeColor;
+    [self updateView];
 }
+
+-(void)setFillColor:(UIColor *)fillColor
+{
+    _fillColor = fillColor;
+    [self updateView];
+}
+
+-(void)updateView
+{
+    [self setNeedsDisplay];
+    //    [self drawShape];
+}
+
+
 
 -(UIBezierPath *)bezierPathRowLeft
 {
@@ -205,5 +215,26 @@
     return radiansToDegrees(rads);
     
 }
+
+/*
+ -(void)drawShape
+ {
+ if (self.currentLayer) {
+ [self.currentLayer removeFromSuperlayer];
+ }
+ UIBezierPath *path = self.rowDirection==ChatBubbleViewRowDirectionLeft? [self bezierPathRowLeft]:[self bezierPathRowRight];
+ CAShapeLayer *trangleLayer = [CAShapeLayer layer];
+ //        maskLayer.backgroundColor = [UIColor purpleColor].CGColor;
+ trangleLayer.path = [path CGPath];
+ trangleLayer.strokeColor = [UIColor redColor].CGColor;
+ trangleLayer.fillColor = [UIColor clearColor].CGColor;
+ trangleLayer.lineWidth = 1.0;
+ trangleLayer.lineCap = kCALineCapRound;
+ trangleLayer.lineJoin = kCALineJoinRound;
+ //    trangleLayer.fillColor = obj.color.CGColor;
+ //    trangleLayer.fillRule = kCAFillRuleNonZero;//kCAFillRuleEvenOdd画的区域 取反  解释为奇偶。
+ [self.layer addSublayer:trangleLayer];
+ self.currentLayer = trangleLayer;
+ }*/
 
 @end

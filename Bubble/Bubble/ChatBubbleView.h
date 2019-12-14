@@ -17,7 +17,13 @@ typedef enum :NSInteger{
 @interface ChatBubbleView : UIView
 //箭头朝向 左-右
 @property(nonatomic, assign) CGFloat rowDirection;
+//线条颜色
+@property(nonatomic, strong) UIColor *strokeColor;
+//填充色
+@property(nonatomic, strong) UIColor *fillColor;
+
 -(instancetype)initWithFrame:(CGRect)frame rowDirection:(ChatBubbleViewRowDirection)direction;
+-(void)updateView;
 @end
 
 NS_ASSUME_NONNULL_END
