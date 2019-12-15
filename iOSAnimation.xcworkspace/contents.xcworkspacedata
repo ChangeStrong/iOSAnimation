@@ -22,4 +22,7 @@
    <FileRef
       location = "group:Bubble/Bubble.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Bubble/../LLInputTextView/LLInputTextView.xcodeproj">
+   </FileRef>
 </Workspace>

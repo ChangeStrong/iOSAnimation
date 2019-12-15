@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+LLFrame.h"
 NS_ASSUME_NONNULL_BEGIN
 typedef enum :NSInteger{
     ChatBubbleViewRowDirectionLeft,
@@ -21,9 +20,15 @@ typedef enum :NSInteger{
 @property(nonatomic, strong) UIColor *strokeColor;
 //填充色
 @property(nonatomic, strong) UIColor *fillColor;
+//三角箭头的高度
+@property(nonatomic, assign) CGFloat rowHeight;
+//线宽
+@property(nonatomic, assign) CGFloat lineWidth;
 
--(instancetype)initWithFrame:(CGRect)frame rowDirection:(ChatBubbleViewRowDirection)direction;
+-(instancetype)initWithFrame:(CGRect)frame rowDirection:(ChatBubbleViewRowDirection)direction rowHeight:(CGFloat)rowHeight roundRadius:(CGFloat)radius;
 -(void)updateView;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

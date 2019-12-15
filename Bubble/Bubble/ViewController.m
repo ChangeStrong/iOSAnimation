@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    ChatBubbleView *bubble = [[ChatBubbleView alloc]initWithFrame:CGRectMake(100, 100, 200, 200) rowDirection:ChatBubbleViewRowDirectionLeft];
+    ChatBubbleView *bubble = [[ChatBubbleView alloc]initWithFrame:CGRectMake(100, 100, 200, 40) rowDirection:ChatBubbleViewRowDirectionLeft rowHeight:10.0 roundRadius:10.0];
     [self.view addSubview:bubble];
     self.bubbleView = bubble;
 }

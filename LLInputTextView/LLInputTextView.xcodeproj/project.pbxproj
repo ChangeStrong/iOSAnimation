@@ -7,34 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6922FD9423A4830900ACAD02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922FD9323A4830900ACAD02 /* AppDelegate.m */; };
-		6922FD9723A4830900ACAD02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922FD9623A4830900ACAD02 /* ViewController.m */; };
-		6922FD9A23A4830900ACAD02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6922FD9823A4830900ACAD02 /* Main.storyboard */; };
-		6922FD9D23A4830900ACAD02 /* Bubble.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6922FD9B23A4830900ACAD02 /* Bubble.xcdatamodeld */; };
-		6922FD9F23A4830A00ACAD02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6922FD9E23A4830A00ACAD02 /* Assets.xcassets */; };
-		6922FDA223A4830A00ACAD02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6922FDA023A4830A00ACAD02 /* LaunchScreen.storyboard */; };
-		6922FDA523A4830A00ACAD02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922FDA423A4830A00ACAD02 /* main.m */; };
-		6922FDB023A4835D00ACAD02 /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922FDAF23A4835D00ACAD02 /* ChatBubbleView.m */; };
+		69E210DE23A5EB6B0094B03E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E210DD23A5EB6B0094B03E /* AppDelegate.m */; };
+		69E210E123A5EB6B0094B03E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E210E023A5EB6B0094B03E /* ViewController.m */; };
+		69E210E423A5EB6B0094B03E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E210E223A5EB6B0094B03E /* Main.storyboard */; };
+		69E210E723A5EB6B0094B03E /* LLInputTextView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69E210E523A5EB6B0094B03E /* LLInputTextView.xcdatamodeld */; };
+		69E210E923A5EB6D0094B03E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E210E823A5EB6D0094B03E /* Assets.xcassets */; };
+		69E210EC23A5EB6D0094B03E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E210EA23A5EB6D0094B03E /* LaunchScreen.storyboard */; };
+		69E210EF23A5EB6D0094B03E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E210EE23A5EB6D0094B03E /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6922FD8F23A4830900ACAD02 /* Bubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6922FD9223A4830900ACAD02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6922FD9323A4830900ACAD02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6922FD9523A4830900ACAD02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6922FD9623A4830900ACAD02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6922FD9923A4830900ACAD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6922FD9C23A4830900ACAD02 /* Bubble.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bubble.xcdatamodel; sourceTree = "<group>"; };
-		6922FD9E23A4830A00ACAD02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6922FDA123A4830A00ACAD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6922FDA323A4830A00ACAD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6922FDA423A4830A00ACAD02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6922FDAE23A4835D00ACAD02 /* ChatBubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
-		6922FDAF23A4835D00ACAD02 /* ChatBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
+		69E210D923A5EB6B0094B03E /* LLInputTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLInputTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69E210DC23A5EB6B0094B03E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		69E210DD23A5EB6B0094B03E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		69E210DF23A5EB6B0094B03E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		69E210E023A5EB6B0094B03E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		69E210E323A5EB6B0094B03E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69E210E623A5EB6B0094B03E /* LLInputTextView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LLInputTextView.xcdatamodel; sourceTree = "<group>"; };
+		69E210E823A5EB6D0094B03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69E210EB23A5EB6D0094B03E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69E210ED23A5EB6D0094B03E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69E210EE23A5EB6D0094B03E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6922FD8C23A4830900ACAD02 /* Frameworks */ = {
+		69E210D623A5EB6B0094B03E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,76 +41,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6922FD8623A4830900ACAD02 = {
+		69E210D023A5EB6B0094B03E = {
 			isa = PBXGroup;
 			children = (
-				6922FD9123A4830900ACAD02 /* Bubble */,
-				6922FD9023A4830900ACAD02 /* Products */,
+				69E210DB23A5EB6B0094B03E /* LLInputTextView */,
+				69E210DA23A5EB6B0094B03E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6922FD9023A4830900ACAD02 /* Products */ = {
+		69E210DA23A5EB6B0094B03E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6922FD8F23A4830900ACAD02 /* Bubble.app */,
+				69E210D923A5EB6B0094B03E /* LLInputTextView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6922FD9123A4830900ACAD02 /* Bubble */ = {
+		69E210DB23A5EB6B0094B03E /* LLInputTextView */ = {
 			isa = PBXGroup;
 			children = (
-				6922FD9223A4830900ACAD02 /* AppDelegate.h */,
-				6922FD9323A4830900ACAD02 /* AppDelegate.m */,
-				6922FD9523A4830900ACAD02 /* ViewController.h */,
-				6922FD9623A4830900ACAD02 /* ViewController.m */,
-				6922FD9823A4830900ACAD02 /* Main.storyboard */,
-				6922FD9E23A4830A00ACAD02 /* Assets.xcassets */,
-				6922FDA023A4830A00ACAD02 /* LaunchScreen.storyboard */,
-				6922FDA323A4830A00ACAD02 /* Info.plist */,
-				6922FDA423A4830A00ACAD02 /* main.m */,
-				6922FD9B23A4830900ACAD02 /* Bubble.xcdatamodeld */,
-				6922FDAE23A4835D00ACAD02 /* ChatBubbleView.h */,
-				6922FDAF23A4835D00ACAD02 /* ChatBubbleView.m */,
+				69E210DC23A5EB6B0094B03E /* AppDelegate.h */,
+				69E210DD23A5EB6B0094B03E /* AppDelegate.m */,
+				69E210DF23A5EB6B0094B03E /* ViewController.h */,
+				69E210E023A5EB6B0094B03E /* ViewController.m */,
+				69E210E223A5EB6B0094B03E /* Main.storyboard */,
+				69E210E823A5EB6D0094B03E /* Assets.xcassets */,
+				69E210EA23A5EB6D0094B03E /* LaunchScreen.storyboard */,
+				69E210ED23A5EB6D0094B03E /* Info.plist */,
+				69E210EE23A5EB6D0094B03E /* main.m */,
+				69E210E523A5EB6B0094B03E /* LLInputTextView.xcdatamodeld */,
 			);
-			path = Bubble;
+			path = LLInputTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6922FD8E23A4830900ACAD02 /* Bubble */ = {
+		69E210D823A5EB6B0094B03E /* LLInputTextView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6922FDA823A4830A00ACAD02 /* Build configuration list for PBXNativeTarget "Bubble" */;
+			buildConfigurationList = 69E210F223A5EB6D0094B03E /* Build configuration list for PBXNativeTarget "LLInputTextView" */;
 			buildPhases = (
-				6922FD8B23A4830900ACAD02 /* Sources */,
-				6922FD8C23A4830900ACAD02 /* Frameworks */,
-				6922FD8D23A4830900ACAD02 /* Resources */,
+				69E210D523A5EB6B0094B03E /* Sources */,
+				69E210D623A5EB6B0094B03E /* Frameworks */,
+				69E210D723A5EB6B0094B03E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Bubble;
-			productName = Bubble;
-			productReference = 6922FD8F23A4830900ACAD02 /* Bubble.app */;
+			name = LLInputTextView;
+			productName = LLInputTextView;
+			productReference = 69E210D923A5EB6B0094B03E /* LLInputTextView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6922FD8723A4830900ACAD02 /* Project object */ = {
+		69E210D123A5EB6B0094B03E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = ChangeStrong;
 				TargetAttributes = {
-					6922FD8E23A4830900ACAD02 = {
+					69E210D823A5EB6B0094B03E = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 6922FD8A23A4830900ACAD02 /* Build configuration list for PBXProject "Bubble" */;
+			buildConfigurationList = 69E210D423A5EB6B0094B03E /* Build configuration list for PBXProject "LLInputTextView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,57 +116,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 6922FD8623A4830900ACAD02;
-			productRefGroup = 6922FD9023A4830900ACAD02 /* Products */;
+			mainGroup = 69E210D023A5EB6B0094B03E;
+			productRefGroup = 69E210DA23A5EB6B0094B03E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6922FD8E23A4830900ACAD02 /* Bubble */,
+				69E210D823A5EB6B0094B03E /* LLInputTextView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6922FD8D23A4830900ACAD02 /* Resources */ = {
+		69E210D723A5EB6B0094B03E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6922FDA223A4830A00ACAD02 /* LaunchScreen.storyboard in Resources */,
-				6922FD9F23A4830A00ACAD02 /* Assets.xcassets in Resources */,
-				6922FD9A23A4830900ACAD02 /* Main.storyboard in Resources */,
+				69E210EC23A5EB6D0094B03E /* LaunchScreen.storyboard in Resources */,
+				69E210E923A5EB6D0094B03E /* Assets.xcassets in Resources */,
+				69E210E423A5EB6B0094B03E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6922FD8B23A4830900ACAD02 /* Sources */ = {
+		69E210D523A5EB6B0094B03E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6922FD9D23A4830900ACAD02 /* Bubble.xcdatamodeld in Sources */,
-				6922FD9723A4830900ACAD02 /* ViewController.m in Sources */,
-				6922FDB023A4835D00ACAD02 /* ChatBubbleView.m in Sources */,
-				6922FDA523A4830A00ACAD02 /* main.m in Sources */,
-				6922FD9423A4830900ACAD02 /* AppDelegate.m in Sources */,
+				69E210E123A5EB6B0094B03E /* ViewController.m in Sources */,
+				69E210DE23A5EB6B0094B03E /* AppDelegate.m in Sources */,
+				69E210EF23A5EB6D0094B03E /* main.m in Sources */,
+				69E210E723A5EB6B0094B03E /* LLInputTextView.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6922FD9823A4830900ACAD02 /* Main.storyboard */ = {
+		69E210E223A5EB6B0094B03E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6922FD9923A4830900ACAD02 /* Base */,
+				69E210E323A5EB6B0094B03E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6922FDA023A4830A00ACAD02 /* LaunchScreen.storyboard */ = {
+		69E210EA23A5EB6D0094B03E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6922FDA123A4830A00ACAD02 /* Base */,
+				69E210EB23A5EB6D0094B03E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -179,7 +173,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6922FDA623A4830A00ACAD02 /* Debug */ = {
+		69E210F023A5EB6D0094B03E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,7 +232,7 @@
 			};
 			name = Debug;
 		};
-		6922FDA723A4830A00ACAD02 /* Release */ = {
+		69E210F123A5EB6D0094B03E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -291,33 +285,33 @@
 			};
 			name = Release;
 		};
-		6922FDA923A4830A00ACAD02 /* Debug */ = {
+		69E210F323A5EB6D0094B03E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Bubble/Info.plist;
+				INFOPLIST_FILE = LLInputTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Change.Strong.Bubble;
+				PRODUCT_BUNDLE_IDENTIFIER = Change.Strong.LLInputTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6922FDAA23A4830A00ACAD02 /* Release */ = {
+		69E210F423A5EB6D0094B03E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Bubble/Info.plist;
+				INFOPLIST_FILE = LLInputTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Change.Strong.Bubble;
+				PRODUCT_BUNDLE_IDENTIFIER = Change.Strong.LLInputTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -326,20 +320,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6922FD8A23A4830900ACAD02 /* Build configuration list for PBXProject "Bubble" */ = {
+		69E210D423A5EB6B0094B03E /* Build configuration list for PBXProject "LLInputTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6922FDA623A4830A00ACAD02 /* Debug */,
-				6922FDA723A4830A00ACAD02 /* Release */,
+				69E210F023A5EB6D0094B03E /* Debug */,
+				69E210F123A5EB6D0094B03E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6922FDA823A4830A00ACAD02 /* Build configuration list for PBXNativeTarget "Bubble" */ = {
+		69E210F223A5EB6D0094B03E /* Build configuration list for PBXNativeTarget "LLInputTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6922FDA923A4830A00ACAD02 /* Debug */,
-				6922FDAA23A4830A00ACAD02 /* Release */,
+				69E210F323A5EB6D0094B03E /* Debug */,
+				69E210F423A5EB6D0094B03E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -347,17 +341,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6922FD9B23A4830900ACAD02 /* Bubble.xcdatamodeld */ = {
+		69E210E523A5EB6B0094B03E /* LLInputTextView.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6922FD9C23A4830900ACAD02 /* Bubble.xcdatamodel */,
+				69E210E623A5EB6B0094B03E /* LLInputTextView.xcdatamodel */,
 			);
-			currentVersion = 6922FD9C23A4830900ACAD02 /* Bubble.xcdatamodel */;
-			path = Bubble.xcdatamodeld;
+			currentVersion = 69E210E623A5EB6B0094B03E /* LLInputTextView.xcdatamodel */;
+			path = LLInputTextView.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 6922FD8723A4830900ACAD02 /* Project object */;
+	rootObject = 69E210D123A5EB6B0094B03E /* Project object */;
 }
