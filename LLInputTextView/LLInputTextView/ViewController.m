@@ -13,13 +13,15 @@
 @property(nonatomic, weak) LLInputTextView *inputTextView;
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    CGFloat _oldY;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor grayColor];
-    LLInputTextView *inputTextView = [[LLInputTextView alloc]initWithFrame:CGRectMake(0, self.view.height-X(41)-40, self.view.width, X(41))];
+    LLInputTextView *inputTextView = [[LLInputTextView alloc]initWithFrame:CGRectMake(0, self.view.height-X(41), self.view.width, X(41))];
     [self.view addSubview:inputTextView];
     inputTextView.backgroundColor =[UIColor redColor];
     self.inputTextView = inputTextView;
@@ -30,6 +32,20 @@
         NSLog(@"new:%f",weakSelf.inputTextView.y);
     };
     
+    inputTextView.keyboadWillShowBlock = ^(CGFloat upHeight) {
+        
+        self->_oldY = weakSelf.inputTextView.y;
+        weakSelf.inputTextView.y = weakSelf.inputTextView.y - upHeight;
+        [weakSelf.inputTextView setAddHeight:-weakSelf.view.safeAreaInsets.bottom];
+    };
+    
+    inputTextView.keyboadWillHideBlock = ^{
+        [weakSelf.inputTextView setAddHeight:weakSelf.view.safeAreaInsets.bottom];
+        weakSelf.inputTextView.y = self->_oldY;
+        
+    };
+    
+    
 }
 //安全区域改变
 -(void)viewSafeAreaInsetsDidChange
@@ -38,9 +54,9 @@
     if (@available(iOS 11.0,*)) {
         UIEdgeInsets insets =  self.view.safeAreaInsets;
         NSLog(@"top=%f bottom=%f",insets.top,insets.bottom);
-        [self.inputTextView setPadingBottom:insets.bottom];
-
+        [self.inputTextView setAddHeight:insets.bottom];
     }
+    
 }
 
 @end
